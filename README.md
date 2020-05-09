@@ -30,18 +30,18 @@ $ cd build
 $ cmake ..
 $ make
 ```
->> **Note:**   Now you can find libethercat_soem.so libmy_force_lib.so  files inside folder ,this files is shared libs
+**Note:**   Now you can find libethercat_soem.so libmy_force_lib.so  files inside folder ,this files is shared libs
 
 * Include library into your own cmake project:
-> + Paste into your CMakeLists.txt file the code below:   
-> ```
-> include_directories( ...path_of_the_library/include)
-> add_library( force_lib SHARED IMPORTED)
-> set_property(TARGET force_lib PROPERTY IMPORTED_LOCATION path_of_the_library/build/libmy_force_lib.so)
-> ```
-> + After the add_executable command add :
-> ```
-> target_link_libraries(my_exe_name force_lib )
-> ```
+ Paste into your CMakeLists.txt file the code below:   
+```
+ include_directories( ...path_of_the_library/include)
+ add_library( force_lib SHARED IMPORTED)
+ set_property(TARGET force_lib PROPERTY IMPORTED_LOCATION path_of_the_library/build/libmy_force_lib.so)
+```
+ After the add_executable command add :
+```
+target_link_libraries(my_exe_name force_lib )
+```
 
  ----------
